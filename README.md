@@ -1,12 +1,10 @@
 # NHL Roster Optimizer
 
-A full data science pipeline for building cap-efficient NHL rosters. You set the constraints — cap limit, roster size, forced includes/excludes — and the optimizer finds the highest-value roster that fits.
+A full data science pipeline for building cap-efficient NHL rosters. You can set the constraints (cap limit, roster size, forced includes/excludes) and the optimizer finds the highest-value roster that fits.
 
 Built as a practical exercise in end-to-end ML product development: data ingestion, feature engineering, regression modelling, integer programming, and a deployed interactive app.
 
-**Live app:** [shinyapps.io link]
-
----
+Live app: https://sugreev.shinyapps.io/stat468-app/
 
 ## What it does
 
@@ -47,7 +45,6 @@ MoneyPuck CSV + PuckPedia CSV
 ## Key technical decisions
 
 | Decision | Why |
-|---|---|
 | Ridge regression | Hockey stats are highly correlated (goals, xGoals, points all move together). Ridge keeps all features while shrinking coefficients to reduce overfitting |
 | OR-Tools CP-SAT | Roster construction is an integer programming problem — each player is a binary yes/no. CP-SAT handles this cleanly with hard constraints |
 | DuckDB httpfs for S3 reads | Lets the Shiny app query the predictions CSV directly from S3 with a SQL interface, no boto3 setup required in the app |
@@ -58,7 +55,6 @@ MoneyPuck CSV + PuckPedia CSV
 ## Scenarios tested
 
 | Scenario | Core | Total Predicted Value |
-|---|---|---|
 | Leafs — Draisaitl replaces Marner | Matthews, Nylander, Draisaitl | 0.87 |
 | Leafs — Original core four | Matthews, Nylander, Marner | 0.79 |
 | Leafs — No core four | Matthews, Nylander, Tavares | 0.91 |
