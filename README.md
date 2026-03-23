@@ -8,7 +8,7 @@ Live app: https://sugreev.shinyapps.io/stat468-app/
 
 ## What it does
 
-1. **Ingests** player performance data (MoneyPuck) and salary data (PuckPedia) via CSV download and manual collection
+1. **Ingests** player performance data (MoneyPuck) and salary data (PuckPedia) via CSV download and web scraping.
 2. **Cleans and merges** across inconsistent player names, deduplicates, and removes league-minimum contracts
 3. **Engineers features** — per-60 production rates, cap efficiency metrics (cost per point, cost per xGoal), net takeaway value, possession impact index, Corsi efficiency
 4. **Trains a Ridge regression model** to predict MoneyPuck's `gameScore/60` from engineered stats (Ridge chosen to handle multicollinearity across correlated hockey stats)
