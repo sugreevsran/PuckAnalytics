@@ -46,7 +46,7 @@ MoneyPuck CSV + PuckPedia CSV
 
 | Decision | Why |
 | Ridge regression | Hockey stats are highly correlated (goals, xGoals, points all move together). Ridge keeps all features while shrinking coefficients to reduce overfitting |
-| OR-Tools CP-SAT | Roster construction is an integer programming problem — each player is a binary yes/no. CP-SAT handles this cleanly with hard constraints |
+| OR-Tools CP-SAT | Roster construction is an integer programming problem, each player is a binary yes/no. CP-SAT handles this cleanly with hard constraints |
 | DuckDB httpfs for S3 reads | Lets the Shiny app query the predictions CSV directly from S3 with a SQL interface, no boto3 setup required in the app |
 | Per-60 normalization | Raw counting stats penalize players with less ice time. Per-60 rates make value comparable across different usage contexts |
 
